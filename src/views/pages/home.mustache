@@ -1,0 +1,30 @@
+{{>partials/header}}
+<h2>Início</h2>
+<hr/>
+
+{{>partials/nav}}
+
+<h3>Novo Usuário</h3>
+<form action="/new-user" method="POST">
+    <input type="text" name="firstName" placeholder="Nome"><br/><br/>
+    <input type="text" name="lastName" placeholder="Sobrenome"><br/><br/>
+    <input type="email" name="email" placeholder="Email"><br/><br/>
+    <input type="number" name="age" placeholder="Idade"><br/><br/>
+    <input type="text" name="interests" placeholder="Interesses"><br/><br/>
+    <input type="submit" value="Enviar">
+</form>
+
+<h3>Lista de Usuários</h3>
+<ul>
+    {{#usuarios}}
+        <li>
+            {{name.firstName}} {{name.lastName}}
+            - Idade: {{age}} 
+            - <a href="/usuario/{{id}}/add">add</a> 
+            - <a href="/usuario/{{id}}/sub">sub</a> 
+            - <a href="/usuario/{{id}}/trash">trash</a>
+            </li>
+    {{/usuarios}}
+</ul>
+
+{{>partials/footer}}

@@ -1,0 +1,6 @@
+email (String)
+age (Int32)
+interests (Array)
+name (Object)
+-firstName: (String)
+-lastName: (String)
